@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:wght@400;600;700&display=swap');
+
+:root {
+  --amarelo: #FFD600;
+  --amarelo-escuro: #F5C200;
+  --amarelo-claro: #FFF8CC;
+  --preto: #111111;
+  --cinza-escuro: #222222;
+  --cinza: #444444;
+  --cinza-claro: #EEEEEE;
+  --branco: #FFFFFF;
+  --sombra: 0 4px 18px rgba(0,0,0,0.10);
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background-color: #F7F7F2;
+  color: var(--cinza-escuro);
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+nav {
+  background-color: var(--branco); /* Fundo branco no cabeçalho */
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10); /* Sombra mais suave para fundo claro */
+  border-bottom: 3px solid var(--amarelo); /* Linha amarela na base do header */
+}
+
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  color: var(--preto); /* Logo escuro para contrastar com fundo branco */
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo span {
+  color: var(--amarelo); /* Destaque amarelo no "Eduardo" */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.2rem;
+}
+
+.nav-links a {
+  color: var(--cinza); /* Links em cinza escuro sobre fundo branco */
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 1.1rem 0.85rem;
+  display: block;
+  transition: color 0.2s, background 0.2s;
+  border-bottom: 3px solid transparent;
+  letter-spacing: 0.3px;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+  color: var(--preto); /* Link ativo/hover em preto */
+  border-bottom-color: var(--amarelo); /* Sublinhado amarelo no link ativo */
+}
+
+/* ========== HERO / BANNER ========== */
+.hero {
+  background: var(--preto);
+  color: var(--branco);
+  padding: 3.5rem 2rem 2.5rem;
+  text-align: center;
+  border-bottom: 4px solid var(--amarelo);
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.2rem;
+  letter-spacing: 4px;
+  color: var(--amarelo);
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* ========== CONTAINERS ========== */
+.container {
+  max-width: 860px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+}
+
+.container-wide {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
+}
+
+/* ========== CARDS DO INDEX ========== */
+.cards-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.card-menu {
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 2rem 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--cinza-escuro);
+  border: 2px solid transparent;
+  transition: border 0.2s, transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.card-menu:hover {
+  border-color: var(--amarelo);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(255,214,0,0.18);
+}
+
+.card-menu .icone {
+  font-size: 2.6rem;
+}
+
+.card-menu h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--preto);
+}
+
+.card-menu p {
+  font-size: 0.83rem;
+  color: var(--cinza);
+}
+
+/* ========== FORMULÁRIOS ========== */
+.form-card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 2.2rem 2rem;
+  border-top: 4px solid var(--amarelo);
+}
+
+.form-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  color: var(--preto);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-grupo {
+  margin-bottom: 1.1rem;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  color: var(--cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--cinza-claro);
+  border-radius: 7px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  color: var(--cinza-escuro);
+  background: #fafafa;
+  transition: border 0.2s;
+  outline: none;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+  border-color: var(--amarelo);
+  background: var(--amarelo-claro);
+}
+
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-linha-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ========== BOTÕES ========== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  border-radius: 7px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.btn-primario {
+  background: var(--amarelo);
+  color: var(--preto);
+}
+
+.btn-primario:hover {
+  background: var(--amarelo-escuro);
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  background: var(--preto);
+  color: var(--amarelo);
+}
+
+.btn-secundario:hover {
+  background: var(--cinza-escuro);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+}
+
+.btn-bloco {
+  width: 100%;
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.85rem;
+}
+
+/* ========== ALERTAS ========== */
+.alerta {
+  padding: 0.85rem 1.1rem;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: none;
+}
+
+.alerta.ativo {
+  display: block;
+}
+
+.alerta-sucesso {
+  background: #ECFDF5;
+  color: #065F46;
+  border-left: 4px solid #10B981;
+}
+
+.alerta-erro {
+  background: #FEF2F2;
+  color: #991B1B;
+  border-left: 4px solid #EF4444;
+}
+
+.alerta-aviso {
+  background: var(--amarelo-claro);
+  color: #7A5000;
+  border-left: 4px solid var(--amarelo);
+}
+
+/* ========== TABELA / LISTAGEM ========== */
+.sessoes-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.sessao-card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 1.4rem;
+  border-left: 5px solid var(--amarelo);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sessao-card .filme-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 1px;
+  color: var(--preto);
+}
+
+.sessao-card .badge {
+  display: inline-block;
+  background: var(--amarelo);
+  color: var(--preto);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-right: 0.3rem;
+}
+
+.sessao-card .info-item {
+  font-size: 0.87rem;
+  color: var(--cinza);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sessao-card .preco {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  color: var(--preto);
+  letter-spacing: 1px;
+}
+
+.sessao-card .sessao-rodape {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========== VAZIO ========== */
+.vazio {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.vazio span {
+  display: block;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--preto);
+  color: #666;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.82rem;
+  margin-top: 3rem;
+}
+
+footer strong {
+  color: var(--amarelo);
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 700px) {
+  .form-linha,
+  .form-linha-3 {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ========== DESCRIÇÃO NOS CARDS DE SESSÃO ========== */
+.sessao-descricao {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  line-height: 1.5;
+  border-left: 3px solid var(--amarelo);
+  padding-left: 0.7rem;
+  margin: 0.3rem 0;
+}
+
+/* ========== CARDS DE FILMES ========== */
+.filmes-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.3rem;
+  margin-top: 1.5rem;
+}
+
+.filme-card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 1.5rem;
+  border-top: 4px solid var(--amarelo);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.filme-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.filme-card-titulo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--preto);
+  letter-spacing: 0.5px;
+}
+
+.filme-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.83rem;
+  color: var(--cinza);
+}
+
+.filme-card-descricao {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  border-left: 3px solid var(--amarelo);
+  padding-left: 0.75rem;
+  margin-top: 0.2rem;
+}
+
+/* ========== BOTÃO DE EXCLUSÃO ========== */
+/* Estilo vermelho para ações destrutivas (DELETE) */
+.btn-danger {
+  background: #EF4444;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #DC2626;
+  transform: translateY(-2px);
+}
+
+/* ========== MODAL DE CONFIRMAÇÃO DE EXCLUSÃO ========== */
+/* Overlay escuro que cobre a tela quando o modal está aberto */
+.modal-overlay {
+  display: none;               /* Oculto por padrão */
+  position: fixed;
+  inset: 0;                    /* Cobre toda a tela */
+  background: rgba(0,0,0,0.45);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Exibe o overlay em flex quando a classe 'ativo' é aplicada via JS */
+.modal-overlay.ativo {
+  display: flex;
+}
+
+/* Caixa de diálogo do modal */
+.modal-box {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  padding: 2rem 2.2rem;
+  max-width: 400px;
+  width: 92%;
+  border-top: 5px solid #EF4444;
+  text-align: center;
+}
+
+.modal-box .modal-icone {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-box h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  color: var(--preto);
+  margin-bottom: 0.5rem;
+}
+
+.modal-box p {
+  font-size: 0.92rem;
+  color: var(--cinza);
+  margin-bottom: 1.4rem;
+  line-height: 1.5;
+}
+
+/* Linha de botões do modal lado a lado */
+.modal-acoes {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+/* Aviso de dependência dentro do modal (ex: sessões vinculadas) */
+.modal-aviso {
+  background: #FEF2F2;
+  color: #991B1B;
+  border-left: 4px solid #EF4444;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  display: none;    /* Só aparece quando há dependência bloqueando a exclusão */
+}
+
+.modal-aviso.visivel {
+  display: block;
+}
