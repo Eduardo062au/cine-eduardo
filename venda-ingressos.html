@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Venda de Ingressos</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="salas.html">Ver Salas</a></li>
+      <li><a href="cadastro-sessoes.html">Sessões</a></li>
+      <li><a href="venda-ingressos.html" class="ativo">Ingressos</a></li>
+      <li><a href="sessoes.html">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>🎟️ Ingressos</h1>
+    <p>Registre a venda de ingressos para os clientes</p>
+  </div>
+
+  <div class="container">
+    <div class="form-card">
+      <div class="form-titulo">🎟️ Confirmar Venda</div>
+
+      <div id="alerta" class="alerta"></div>
+
+      <form id="form-ingresso" novalidate>
+
+        <div class="form-grupo">
+          <label for="sessao">Sessão *</label>
+          <select id="sessao" required>
+            <option value="">Carregando...</option>
+          </select>
+        </div>
+
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label for="cliente">Nome do Cliente *</label>
+            <input type="text" id="cliente" placeholder="Nome completo" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="cpf">CPF *</label>
+            <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required />
+          </div>
+        </div>
+
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label for="assento">Assento *</label>
+            <input type="text" id="assento" placeholder="Ex: A10, B5" maxlength="5" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="pagamento">Tipo de Pagamento *</label>
+            <select id="pagamento" required>
+              <option value="">Selecione</option>
+              <option value="Cartão">Cartão</option>
+              <option value="Pix">Pix</option>
+              <option value="Dinheiro">Dinheiro</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primario btn-bloco">✅ Confirmar Venda</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/ingressos.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Cadastro de Sessões</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="salas.html">Ver Salas</a></li>
+      <li><a href="cadastro-sessoes.html" class="ativo">Sessões</a></li>
+      <li><a href="venda-ingressos.html">Ingressos</a></li>
+      <li><a href="sessoes.html">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>📅 Sessões</h1>
+    <p>Programe sessões vinculando filmes e salas</p>
+  </div>
+
+  <div class="container">
+    <div id="aviso-dependencias"></div>
+
+    <div class="form-card">
+      <div class="form-titulo">📅 Nova Sessão</div>
+
+      <div id="alerta" class="alerta"></div>
+
+      <form id="form-sessao" novalidate>
+
+        <div class="form-grupo">
+          <label for="filme">Filme *</label>
+          <select id="filme" required>
+            <option value="">Carregando...</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="sala">Sala *</label>
+          <select id="sala" required>
+            <option value="">Carregando...</option>
+          </select>
+        </div>
+
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label for="dataHora">Data e Hora *</label>
+            <input type="datetime-local" id="dataHora" required />
+          </div>
+
+          <div class="form-grupo">
+            <label for="preco">Preço (R$) *</label>
+            <input type="number" id="preco" min="0" step="0.01" placeholder="Ex: 25.00" required />
+          </div>
+        </div>
+
+        <div class="form-linha">
+          <div class="form-grupo">
+            <label for="idioma">Idioma *</label>
+            <select id="idioma" required>
+              <option value="">Selecione</option>
+              <option value="Dublado">Dublado</option>
+              <option value="Legendado">Legendado</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="formato">Formato *</label>
+            <select id="formato" required>
+              <option value="">Selecione</option>
+              <option value="2D">2D</option>
+              <option value="3D">3D</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primario btn-bloco">💾 Salvar Sessão</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/sessoes.js"></script>
+  <script>
+    // Aviso se não há filmes ou salas
+    document.addEventListener('DOMContentLoaded', function () {
+      const filmes = JSON.parse(localStorage.getItem('filmes') || '[]');
+      const salas = JSON.parse(localStorage.getItem('salas') || '[]');
+      const aviso = document.getElementById('aviso-dependencias');
+
+      let msgs = [];
+      if (filmes.length === 0) msgs.push('<a href="cadastro-filmes.html">cadastrar filmes</a>');
+      if (salas.length === 0) msgs.push('<a href="cadastro-salas.html">cadastrar salas</a>');
+
+      if (msgs.length > 0) {
+        aviso.innerHTML = `<div class="alerta ativo alerta-aviso">⚠️ Para cadastrar uma sessão, primeiro você precisa ${msgs.join(' e ')}.</div>`;
+      }
+    });
+  </script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

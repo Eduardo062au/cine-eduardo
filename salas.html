@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Salas Cadastradas</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Grade de cards para as salas */
+    .salas-lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .sala-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--sombra);
+      padding: 1.4rem;
+      border-top: 4px solid var(--amarelo);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .sala-card-titulo {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.25rem;
+      color: var(--preto);
+    }
+    .sala-card-meta {
+      font-size: 0.87rem;
+      color: var(--cinza);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="salas.html" class="ativo">Ver Salas</a></li>
+      <li><a href="cadastro-sessoes.html">Sessões</a></li>
+      <li><a href="venda-ingressos.html">Ingressos</a></li>
+      <li><a href="sessoes.html">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Salas</h1>
+    <p>Todas as salas cadastradas no cinema</p>
+  </div>
+
+  <div class="container-wide">
+    <div id="lista-salas" class="salas-lista">
+      <div class="vazio"><span>⏳</span>Carregando salas...</div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão de sala -->
+  <div id="modal-exclusao-sala" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icone">🗑️</div>
+      <h3>Excluir Sala</h3>
+      <p>Tem certeza que deseja excluir a sala <strong id="modal-sala-nome"></strong>? Esta ação não pode ser desfeita.</p>
+      <div id="modal-aviso-sala" class="modal-aviso"></div>
+      <div class="modal-acoes">
+        <button id="btn-cancelar-sala" class="btn btn-secundario">Cancelar</button>
+        <button id="btn-confirmar-sala" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/listagem-salas.js"></script>
+</body>
+</html>

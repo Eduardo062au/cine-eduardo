@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Filmes Cadastrados</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="filmes.html" class="ativo">Ver Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="salas.html">Ver Salas</a></li>
+      <li><a href="cadastro-sessoes.html">Sessões</a></li>
+      <li><a href="venda-ingressos.html">Ingressos</a></li>
+      <li><a href="sessoes.html">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Filmes</h1>
+    <p>Todos os filmes cadastrados no sistema</p>
+  </div>
+
+  <div class="container-wide">
+    <div id="lista-filmes" class="filmes-lista">
+      <div class="vazio"><span>⏳</span>Carregando filmes...</div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão de filme -->
+  <div id="modal-exclusao-filme" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icone">🗑️</div>
+      <h3>Excluir Filme</h3>
+      <p>Tem certeza que deseja excluir o filme <strong id="modal-filme-nome"></strong>? Esta ação não pode ser desfeita.</p>
+      <div id="modal-aviso-filme" class="modal-aviso"></div>
+      <div class="modal-acoes">
+        <button id="btn-cancelar-exclusao" class="btn btn-secundario">Cancelar</button>
+        <button id="btn-confirmar-exclusao" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/listagem-filmes.js"></script>
+</body>
+</html>

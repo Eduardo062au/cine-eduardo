@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Início</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="ativo">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="salas.html">Ver Salas</a></li>
+      <li><a href="cadastro-sessoes.html">Sessões</a></li>
+      <li><a href="venda-ingressos.html">Ingressos</a></li>
+      <li><a href="sessoes.html">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Cine Eduardo</h1>
+    <p>Sistema de controle de cinema — gerencie filmes, salas, sessões e vendas</p>
+  </div>
+
+  <div class="container">
+    <div class="cards-menu">
+
+      <a href="cadastro-filmes.html" class="card-menu">
+        <div class="icone">🎥</div>
+        <h3>Cadastro de Filmes</h3>
+        <p>Adicione novos filmes ao sistema com título, gênero, classificação e mais.</p>
+      </a>
+
+      <a href="filmes.html" class="card-menu">
+        <div class="icone">🎬</div>
+        <h3>Ver / Excluir Filmes</h3>
+        <p>Visualize os filmes cadastrados e remova os que não estão mais em cartaz.</p>
+      </a>
+
+      <a href="cadastro-salas.html" class="card-menu">
+        <div class="icone">🏛️</div>
+        <h3>Cadastro de Salas</h3>
+        <p>Gerencie as salas do cinema: nome, capacidade e tipo (2D, 3D, IMAX).</p>
+      </a>
+
+      <a href="salas.html" class="card-menu">
+        <div class="icone">🪑</div>
+        <h3>Ver / Excluir Salas</h3>
+        <p>Visualize as salas cadastradas e remova as que não estão mais em uso.</p>
+      </a>
+
+      <a href="cadastro-sessoes.html" class="card-menu">
+        <div class="icone">📅</div>
+        <h3>Cadastro de Sessões</h3>
+        <p>Programe sessões vinculando filmes e salas com data, hora e preço.</p>
+      </a>
+
+      <a href="venda-ingressos.html" class="card-menu">
+        <div class="icone">🎟️</div>
+        <h3>Venda de Ingressos</h3>
+        <p>Registre a venda de ingressos para clientes com escolha de assento.</p>
+      </a>
+
+      <a href="sessoes.html" class="card-menu">
+        <div class="icone">📽️</div>
+        <h3>Em Cartaz</h3>
+        <p>Veja todas as sessões disponíveis, compre ingressos ou exclua sessões.</p>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

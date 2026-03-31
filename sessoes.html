@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Em Cartaz</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Cine <span>Eduardo</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="cadastro-filmes.html">Filmes</a></li>
+      <li><a href="cadastro-salas.html">Salas</a></li>
+      <li><a href="cadastro-sessoes.html">Sessões</a></li>
+      <li><a href="venda-ingressos.html">Ingressos</a></li>
+      <li><a href="sessoes.html" class="ativo">Em Cartaz</a></li>
+      <li><a href="#" onclick="logout()">🚪 Sair</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>📽️ Em Cartaz</h1>
+    <p>Veja todas as sessões disponíveis e compre seu ingresso</p>
+  </div>
+
+  <div class="container-wide">
+    <div id="lista-sessoes" class="sessoes-lista">
+      <div class="vazio"><span>⏳</span>Carregando sessões...</div>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão de sessão -->
+  <div id="modal-exclusao-sessao" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-icone">🗑️</div>
+      <h3>Excluir Sessão</h3>
+      <p>Tem certeza que deseja excluir a sessão <strong id="modal-sessao-nome"></strong>? Esta ação não pode ser desfeita.</p>
+      <div id="modal-aviso-sessao" class="modal-aviso"></div>
+      <div class="modal-acoes">
+        <button id="btn-cancelar-sessao" class="btn btn-secundario">Cancelar</button>
+        <button id="btn-confirmar-sessao" class="btn btn-danger">Excluir</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <strong>Cine Eduardo</strong> &mdash; Sistema Web de Controle de Cinema
+  </footer>
+
+  <script src="js/listagem-sessoes.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

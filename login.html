@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cine Eduardo — Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--preto);
+    }
+
+    .login-box {
+      background: var(--branco);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      padding: 2.8rem 2.4rem;
+      width: 100%;
+      max-width: 400px;
+      border-top: 5px solid var(--amarelo);
+    }
+
+    .login-logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .login-logo h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 3px;
+      color: var(--preto);
+    }
+
+    .login-logo h1 span {
+      color: var(--amarelo);
+    }
+
+    .login-logo p {
+      font-size: 0.85rem;
+      color: #999;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="login-logo">
+      <h1><span></span> Cine Eduardo</h1>
+      <p>Acesso restrito ao sistema</p>
+    </div>
+
+    <div id="alerta" class="alerta"></div>
+
+    <form id="form-login" novalidate>
+      <div class="form-grupo">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" placeholder="Digite o usuário" autocomplete="username" required />
+      </div>
+
+      <div class="form-grupo">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Digite a senha" autocomplete="current-password" required />
+      </div>
+
+      <button type="submit" class="btn btn-primario btn-bloco">🔐 Entrar</button>
+    </form>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
